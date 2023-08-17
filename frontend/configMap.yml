@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: counter-frontend
+data:
+  # property-like keys; each key maps to a simple value
+  BACKEND_URL: "https://counter-backend-bwizard-dev.apps.sandbox-m3.1530.p1.openshiftapps.com"

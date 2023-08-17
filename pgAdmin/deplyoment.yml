@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: counter-postgresadmin 
+  labels:
+    app: counter-postgresadmin 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: counter-postgresadmin 
+  template:
+    metadata:
+      labels:
+        app: counter-postgresadmin 
+    spec:
+      containers:
+      - name: counter-postgresadmin 
+        image: ghcr.io/modul-i-ch-109/pgadmin4:latest
+        ports: 
+          - containerPort: 5050
+        env: 
+          - name: PGADMIN_DEFAULT_EMAIL
+            value: admin@admin.com
+          - name: PGADMIN_DEFAULT_PASSWORD
+            value: root
